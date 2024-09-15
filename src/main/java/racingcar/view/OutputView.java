@@ -10,7 +10,12 @@ public class OutputView {
         System.out.print("최종 우승자 : ");
     }
 
-    public void printMessage(String message) {
-        System.out.println(message);
+    public void dashMessage() {
+        System.out.println("-");
+    }
+
+    public void printMessage(String carName, boolean stopAndGo) {
+        System.out.println(carName + " : " );
+
     }
 }
