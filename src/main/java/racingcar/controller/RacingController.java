@@ -19,13 +19,16 @@ public class RacingController {
         this.cars = new Cars(CarDivision.carDivide(inputView.readRacingCarName()));
         this.moveForward = new MoveForward(inputView.readTrialCount());
     }
-    //가장 많이 간 사람이 이긴거.
+
     public void run() {
         outputView.executionResultMessage();
         int count = 0;
-        while(count != moveForward.getTrialCount()) {
 
-            count += 1;
+        while(count < moveForward.getTrialCount()) {
+            count++;
+            cars.moveCars();
+            outputView.printMoveResults(cars.getCars());
         }
+        outputView.finalWinnerMessage(cars.winnerJudge());
     }
 }
