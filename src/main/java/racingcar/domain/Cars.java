@@ -41,10 +41,13 @@ public class Cars {
 
         for(Car car : cars) {
             if(car.getPosition() == maxPosition) {
-                sb.append(car.getName());
+                sb.append(car.getName()).append(", ");
             }
-            sb.append(" ");
         }
-        return sb.toString().trim();
+
+        if (!sb.isEmpty()) {
+            sb.setLength(sb.length() - 2); // ", "의 길이 만큼 줄임
+        }
+        return sb.toString();
     }
 }
