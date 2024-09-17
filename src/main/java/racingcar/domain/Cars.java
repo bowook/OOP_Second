@@ -10,6 +10,7 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(List<String> carNames) {
+        Validate.validator(carNames);
         this.cars = carNames.stream().map(Car::new).collect(Collectors.toList());
     }
 
@@ -46,7 +47,7 @@ public class Cars {
         }
 
         if (!sb.isEmpty()) {
-            sb.setLength(sb.length() - 2); // ", "의 길이 만큼 줄임
+            sb.setLength(sb.length() - 2);
         }
         return sb.toString();
     }

@@ -1,9 +1,7 @@
 package racingcar.controller;
 
 import racingcar.domain.Cars;
-import racingcar.service.CarDivision;
 import racingcar.service.MoveForward;
-import racingcar.service.Validate;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -17,7 +15,7 @@ public class RacingController {
     public RacingController() {
         this.inputView = new InputView();
         this.outputView = new OutputView();
-        this.cars = new Cars(Validate.validator(CarDivision.carDivide(inputView.readRacingCarName())));
+        this.cars = new Cars(inputView.readRacingCarName());
         this.moveForward = new MoveForward(inputView.readTrialCount());
     }
 

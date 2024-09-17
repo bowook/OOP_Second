@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 public class Car {
+    //무엇을 할 것인가, 핵심 기능 로직
     private final String name;
     private int position;
 
@@ -19,6 +20,7 @@ public class Car {
     public String getName() {
         return name;
     }
+
 
     @Override
     public String toString() {
